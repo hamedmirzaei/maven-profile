@@ -62,11 +62,20 @@
                 <version>3.1.1</version>
                 <executions>
                     <execution>
+                        <id>dependency-analyze</id>
+
+                        <phase>package</phase>
+
                         <goals>
                             <goal>analyze-only</goal>
                         </goals>
+
                         <configuration>
                             <ignoreNonCompile>true</ignoreNonCompile>
+
+                            <ignoredUsedUndeclaredDependencies>
+                                <ignoredUsedUndeclaredDependency>org.springframework.boot:*:*:*</ignoredUsedUndeclaredDependency>
+                            </ignoredUsedUndeclaredDependencies>
                         </configuration>
                     </execution>
                 </executions>
